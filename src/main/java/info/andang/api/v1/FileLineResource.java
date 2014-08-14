@@ -8,6 +8,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import java.io.IOException;
 
 @Path("/lines")
 @Produces(MediaType.APPLICATION_JSON)
@@ -21,7 +22,7 @@ public class FileLineResource {
 
   @GET
   @Path("/{index}")
-  public String getLineAtIndex(@PathParam("index") int index){
+  public String getLineAtIndex(@PathParam("index") int index) throws IOException {
     return this.fileLineService.getLineAtIndex(index);
   }
 

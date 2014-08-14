@@ -31,6 +31,11 @@
             <artifactId>live-config</artifactId>
             <version>1.0.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.jramoyo</groupId>
+            <artifactId>indexed-file-reader</artifactId>
+            <version>1.0</version>
+        </dependency>
     </dependencies>
 
     <properties>
