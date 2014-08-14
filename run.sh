@@ -1,8 +1,5 @@
-if [ $# -eq 1 ]
-then
-	sudo java -classpath .:lib/* -Djava.library.path=rocksaw-1.0.3/lib/ ccs.neu.edu.andang.RawHTTPGet $1
-else
-	echo "Usage: run.sh [absolute_path_to_file]"
+if [ $# -ne 1 ]
+   echo "Usage: run.sh [absolute_path_to_file]"
 fi
 
 if [[ "$1" = /* ]]
