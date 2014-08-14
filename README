@@ -1,0 +1,29 @@
+Specification
+-------------
+
+A system that act as a network server that serves individual lines of an immutable text file over the network to clients using the following REST API:
+
+GET /lines/<line index>
+
+   Returns an HTTP status of 200 and the text of the requested line or an HTTP 413 status if the requested line is beyond the end of the file
+
+Build and Run
+-------------
+Run "build.sh" and then run "run.sh" with the absolute path to the file
+
+* How does it work? (Currently)
+The system use "indexed-file-reader" to index the positions of all "\n" character in the file.  Thus, it support high performance
+ randomly access file's line at any given index.
+
+* How will your system perform with a 1 GB file? a 10 GB file? a 100 GB file?
+Only support small files for now.
+
+* What documentation, websites, papers, etc did you consult in doing this assignment?
+N/A
+
+* What third-party libraries or other tools does the system use?
+https://github.com/jramoyo/indexed-file-reader
+https://github.com/HubSpot/dropwizard-guice
+https://github.com/HubSpot/live-config
+
+* How long did you spend on this exercise? 3 hours

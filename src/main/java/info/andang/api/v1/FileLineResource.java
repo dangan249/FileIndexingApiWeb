@@ -3,11 +3,9 @@ package info.andang.api.v1;
 import com.google.inject.Inject;
 import info.andang.api.v1.service.FileLineService;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.io.IOException;
 
 @Path("/lines")
@@ -23,7 +21,16 @@ public class FileLineResource {
   @GET
   @Path("/{index}")
   public String getLineAtIndex(@PathParam("index") int index) throws IOException {
-    return this.fileLineService.getLineAtIndex(index);
+    if(index == 0){
+      throw new WebApplicationException(Response.Status.BAD_REQUEST);
+    }
+    String value;
+    try {
+      value = this.fileLineService.getLineAtIndex(index);
+    } catch (IllegalArgumentException ex){
+      throw new WebApplicationException(Response.status(413).build());
+    }
+    return value;
   }
 
 }
