@@ -21,8 +21,8 @@ public class FileLineResource {
 
   @GET
   @Path("/{index}")
-  public String getmyProfile(@PathParam("index") int index){
-    return this.fileLineService.getLine(index);
+  public String getLineAtIndex(@PathParam("index") int index){
+    return this.fileLineService.getLineAtIndex(index);
   }
 
 }

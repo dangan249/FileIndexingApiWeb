@@ -1,14 +1,18 @@
 package info.andang.api.v1.service;
 
 import com.google.inject.Inject;
+import com.google.inject.name.Named;
 
 public class FileLineService {
 
+  private final String sourceFilePath;
+
   @Inject
-  public FileLineService() {
+  public FileLineService(@Named("source.file.path") String sourceFilePath) {
+    this.sourceFilePath = sourceFilePath;
   }
 
-  public String getLine(int index){
-    return "amen";
+  public String getLineAtIndex(int index){
+    return sourceFilePath;
   }
 }
