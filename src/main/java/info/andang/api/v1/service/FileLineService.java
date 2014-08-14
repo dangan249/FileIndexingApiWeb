@@ -11,13 +11,11 @@ public class FileLineService {
 
   private final String sourceFilePath;
   private final IndexedFileReader reader;
-  private final int maxIndex;
 
   @Inject
   public FileLineService(@Named("source.file.path") String sourceFilePath) throws IOException {
     this.sourceFilePath = sourceFilePath;
     reader = new IndexedFileReader(new File(sourceFilePath));
-    this.maxIndex = 0;
   }
 
   public String getLineAtIndex(int index) throws IOException {
