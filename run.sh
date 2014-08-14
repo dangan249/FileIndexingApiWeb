@@ -1,0 +1,1 @@
+env FileIndexingApiWebModule_File_Path=$1 java -jar target/FileIndexingApiWeb.jar server FileIndexingApiWeb.yml
