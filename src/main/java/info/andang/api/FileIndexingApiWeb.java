@@ -30,5 +30,6 @@ public class FileIndexingApiWeb extends Application<FileIndexingApiWebConfigurat
 
   @Override
   public void run(FileIndexingApiWebConfiguration fileIndexingApiWebConfiguration, Environment environment) throws Exception {
+    System.out.println("HELLLLOOOO");
   }
 }
